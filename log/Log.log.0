@@ -6180,3 +6180,251 @@ dic 24, 2016 8:41:50 PM utilerias.Log info
 INFORMACIÓN: Cerrando la conexion a la base de datos
 dic 24, 2016 8:41:50 PM cerrarConexion() Conexion cerrada
 INFORMACIÓN: basededatos.SQLite
+dic 24, 2016 8:55:58 PM utilerias.Log info
+INFORMACIÓN: Obteniendo conexion la base de datos...
+dic 24, 2016 8:55:58 PM obtenerConexion() Conectando a la base de datos...
+INFORMACIÓN: basededatos.SQLite
+dic 24, 2016 8:55:58 PM utilerias.Log info
+INFORMACIÓN: Operacion: getRegistros, consultando en la base de datos
+dic 24, 2016 8:55:58 PM utilerias.Log info
+INFORMACIÓN: Cerrando la conexion a la base de datos
+dic 24, 2016 8:55:58 PM cerrarConexion() Conexion cerrada
+INFORMACIÓN: basededatos.SQLite
+dic 24, 2016 8:55:58 PM utilerias.Log info
+INFORMACIÓN: Obteniendo conexion la base de datos...
+dic 24, 2016 8:55:58 PM obtenerConexion() Conectando a la base de datos...
+INFORMACIÓN: basededatos.SQLite
+dic 24, 2016 8:55:58 PM utilerias.Log info
+INFORMACIÓN: Accion: INSER INTO Recibo
+dic 24, 2016 8:56:00 PM utilerias.Log info
+INFORMACIÓN: Error: java.sql.SQLException: no such table: Recibo
+dic 24, 2016 8:57:18 PM utilerias.Log info
+INFORMACIÓN: Obteniendo conexion la base de datos...
+dic 24, 2016 8:57:18 PM obtenerConexion() Conectando a la base de datos...
+INFORMACIÓN: basededatos.SQLite
+dic 24, 2016 8:57:18 PM utilerias.Log info
+INFORMACIÓN: Operacion: getRegistros, consultando en la base de datos
+dic 24, 2016 8:57:18 PM utilerias.Log info
+INFORMACIÓN: Cerrando la conexion a la base de datos
+dic 24, 2016 8:57:18 PM cerrarConexion() Conexion cerrada
+INFORMACIÓN: basededatos.SQLite
+dic 24, 2016 8:57:18 PM utilerias.Log info
+INFORMACIÓN: Obteniendo conexion la base de datos...
+dic 24, 2016 8:57:18 PM obtenerConexion() Conectando a la base de datos...
+INFORMACIÓN: basededatos.SQLite
+dic 24, 2016 8:57:18 PM utilerias.Log info
+INFORMACIÓN: Accion: INSER INTO Recibo
+dic 24, 2016 8:57:20 PM utilerias.Log info
+INFORMACIÓN: Recibos generados ¡EXITOSAMENTE!
+dic 24, 2016 8:57:20 PM utilerias.Log info
+INFORMACIÓN: Cerrando la conexion a la base de datos
+dic 24, 2016 8:57:20 PM cerrarConexion() Conexion cerrada
+INFORMACIÓN: basededatos.SQLite
+dic 24, 2016 8:57:24 PM utilerias.Log info
+INFORMACIÓN: Obteniendo conexion la base de datos...
+dic 24, 2016 8:57:24 PM obtenerConexion() Conectando a la base de datos...
+INFORMACIÓN: basededatos.SQLite
+dic 24, 2016 8:57:24 PM utilerias.Log info
+INFORMACIÓN: Operacion: getRegistros, consultando en la base de datos
+dic 24, 2016 8:57:24 PM utilerias.Log info
+INFORMACIÓN: Cerrando la conexion a la base de datos
+dic 24, 2016 8:57:24 PM cerrarConexion() Conexion cerrada
+INFORMACIÓN: basededatos.SQLite
+dic 24, 2016 8:57:24 PM utilerias.Log info
+INFORMACIÓN: Obteniendo conexion la base de datos...
+dic 24, 2016 8:57:24 PM obtenerConexion() Conectando a la base de datos...
+INFORMACIÓN: basededatos.SQLite
+dic 24, 2016 8:57:24 PM utilerias.Log info
+INFORMACIÓN: Operacion: getRegistros, consultando en la base de datos
+dic 24, 2016 8:57:28 PM getRegistros() Error: java.sql.SQLException: [SQLITE_ERROR] SQL error or missing database (no such table: main.Recibo_sin_medidor)
+INFORMACIÓN: basededatos.SQLite
+dic 24, 2016 8:58:30 PM utilerias.Log info
+INFORMACIÓN: Obteniendo conexion la base de datos...
+dic 24, 2016 8:58:30 PM obtenerConexion() Conectando a la base de datos...
+INFORMACIÓN: basededatos.SQLite
+dic 24, 2016 8:58:30 PM utilerias.Log info
+INFORMACIÓN: Operacion: getRegistros, consultando en la base de datos
+dic 24, 2016 8:58:30 PM utilerias.Log info
+INFORMACIÓN: Cerrando la conexion a la base de datos
+dic 24, 2016 8:58:30 PM cerrarConexion() Conexion cerrada
+INFORMACIÓN: basededatos.SQLite
+dic 24, 2016 8:58:30 PM utilerias.Log info
+INFORMACIÓN: Obteniendo conexion la base de datos...
+dic 24, 2016 8:58:30 PM obtenerConexion() Conectando a la base de datos...
+INFORMACIÓN: basededatos.SQLite
+dic 24, 2016 8:58:30 PM utilerias.Log info
+INFORMACIÓN: Operacion: getRegistros, consultando en la base de datos
+dic 24, 2016 8:58:30 PM utilerias.Log info
+INFORMACIÓN: Cerrando la conexion a la base de datos
+dic 24, 2016 8:58:30 PM cerrarConexion() Conexion cerrada
+INFORMACIÓN: basededatos.SQLite
+dic 24, 2016 8:58:34 PM utilerias.Log info
+INFORMACIÓN: Obteniendo conexion la base de datos...
+dic 24, 2016 8:58:34 PM obtenerConexion() Conectando a la base de datos...
+INFORMACIÓN: basededatos.SQLite
+dic 24, 2016 8:58:34 PM utilerias.Log info
+INFORMACIÓN: Operacion: getRegistros, consultando en la base de datos
+dic 24, 2016 8:58:34 PM utilerias.Log info
+INFORMACIÓN: Cerrando la conexion a la base de datos
+dic 24, 2016 8:58:34 PM cerrarConexion() Conexion cerrada
+INFORMACIÓN: basededatos.SQLite
+dic 24, 2016 8:58:38 PM utilerias.Log info
+INFORMACIÓN: Obteniendo conexion la base de datos...
+dic 24, 2016 8:58:38 PM obtenerConexion() Conectando a la base de datos...
+INFORMACIÓN: basededatos.SQLite
+dic 24, 2016 8:58:38 PM reciboDelServicioConFecha() consultado: ViewRecibo{id_recibo=42, ndi=16111002, nombre=ALEJ, apellidos=PABLO, zona=CASCO, calle=HID, nodecalle=AS, estado=ADEUDO, mes=3, anio=2017, id_servicio=3, monto=3000}
+INFORMACIÓN: modelo.ViewReciboDAO
+dic 24, 2016 8:58:38 PM utilerias.Log info
+INFORMACIÓN: Cerrando la conexion a la base de datos
+dic 24, 2016 8:58:38 PM cerrarConexion() Conexion cerrada
+INFORMACIÓN: basededatos.SQLite
+dic 24, 2016 8:58:50 PM utilerias.Log info
+INFORMACIÓN: Obteniendo conexion la base de datos...
+dic 24, 2016 8:58:50 PM obtenerConexion() Conectando a la base de datos...
+INFORMACIÓN: basededatos.SQLite
+dic 24, 2016 8:58:50 PM utilerias.Log info
+INFORMACIÓN: Operacion: getRegistros, consultando en la base de datos
+dic 24, 2016 8:58:50 PM utilerias.Log info
+INFORMACIÓN: Cerrando la conexion a la base de datos
+dic 24, 2016 8:58:50 PM cerrarConexion() Conexion cerrada
+INFORMACIÓN: basededatos.SQLite
+dic 24, 2016 8:58:51 PM utilerias.Log info
+INFORMACIÓN: Obteniendo conexion la base de datos...
+dic 24, 2016 8:58:51 PM obtenerConexion() Conectando a la base de datos...
+INFORMACIÓN: basededatos.SQLite
+dic 24, 2016 8:58:51 PM utilerias.Log info
+INFORMACIÓN: Operacion: getRegistros, consultando en la base de datos
+dic 24, 2016 8:58:51 PM utilerias.Log info
+INFORMACIÓN: Cerrando la conexion a la base de datos
+dic 24, 2016 8:58:51 PM cerrarConexion() Conexion cerrada
+INFORMACIÓN: basededatos.SQLite
+dic 24, 2016 8:58:51 PM utilerias.Log info
+INFORMACIÓN: Obteniendo conexion la base de datos...
+dic 24, 2016 8:58:51 PM obtenerConexion() Conectando a la base de datos...
+INFORMACIÓN: basededatos.SQLite
+dic 24, 2016 8:58:51 PM reciboDelServicioConFecha() consultado: ViewRecibo{id_recibo=41, ndi=14160202, nombre=ALEJANDRO, apellidos=PABLO , zona=CASCO, calle=CERRO, nodecalle=2, estado=ADEUDO, mes=3, anio=2017, id_servicio=2, monto=3000}
+INFORMACIÓN: modelo.ViewReciboDAO
+dic 24, 2016 8:58:51 PM utilerias.Log info
+INFORMACIÓN: Cerrando la conexion a la base de datos
+dic 24, 2016 8:58:51 PM cerrarConexion() Conexion cerrada
+INFORMACIÓN: basededatos.SQLite
+dic 24, 2016 8:58:54 PM utilerias.Log info
+INFORMACIÓN: Obteniendo conexion la base de datos...
+dic 24, 2016 8:58:54 PM obtenerConexion() Conectando a la base de datos...
+INFORMACIÓN: basededatos.SQLite
+dic 24, 2016 8:58:54 PM reciboDelServicioConFecha() consultado: ViewRecibo{id_recibo=0, ndi=0, nombre=null, apellidos=null, zona=null, calle=null, nodecalle=null, estado=null, mes=0, anio=0, id_servicio=0, monto=0}
+INFORMACIÓN: modelo.ViewReciboDAO
+dic 24, 2016 8:58:54 PM utilerias.Log info
+INFORMACIÓN: Cerrando la conexion a la base de datos
+dic 24, 2016 8:58:54 PM cerrarConexion() Conexion cerrada
+INFORMACIÓN: basededatos.SQLite
+dic 24, 2016 8:58:56 PM utilerias.Log info
+INFORMACIÓN: Obteniendo conexion la base de datos...
+dic 24, 2016 8:58:56 PM obtenerConexion() Conectando a la base de datos...
+INFORMACIÓN: basededatos.SQLite
+dic 24, 2016 8:58:56 PM utilerias.Log info
+INFORMACIÓN: Operacion: getRegistros, consultando en la base de datos
+dic 24, 2016 8:58:56 PM utilerias.Log info
+INFORMACIÓN: Cerrando la conexion a la base de datos
+dic 24, 2016 8:58:56 PM cerrarConexion() Conexion cerrada
+INFORMACIÓN: basededatos.SQLite
+dic 24, 2016 8:58:57 PM utilerias.Log info
+INFORMACIÓN: Obteniendo conexion la base de datos...
+dic 24, 2016 8:58:57 PM obtenerConexion() Conectando a la base de datos...
+INFORMACIÓN: basededatos.SQLite
+dic 24, 2016 8:58:57 PM reciboDelServicioConFecha() consultado: ViewRecibo{id_recibo=0, ndi=0, nombre=null, apellidos=null, zona=null, calle=null, nodecalle=null, estado=null, mes=0, anio=0, id_servicio=0, monto=0}
+INFORMACIÓN: modelo.ViewReciboDAO
+dic 24, 2016 8:58:57 PM utilerias.Log info
+INFORMACIÓN: Cerrando la conexion a la base de datos
+dic 24, 2016 8:58:57 PM cerrarConexion() Conexion cerrada
+INFORMACIÓN: basededatos.SQLite
+dic 24, 2016 8:58:58 PM utilerias.Log info
+INFORMACIÓN: Obteniendo conexion la base de datos...
+dic 24, 2016 8:58:58 PM obtenerConexion() Conectando a la base de datos...
+INFORMACIÓN: basededatos.SQLite
+dic 24, 2016 8:58:58 PM utilerias.Log info
+INFORMACIÓN: Operacion: getRegistros, consultando en la base de datos
+dic 24, 2016 8:58:58 PM utilerias.Log info
+INFORMACIÓN: Cerrando la conexion a la base de datos
+dic 24, 2016 8:58:58 PM cerrarConexion() Conexion cerrada
+INFORMACIÓN: basededatos.SQLite
+dic 24, 2016 8:59:00 PM utilerias.Log info
+INFORMACIÓN: Obteniendo conexion la base de datos...
+dic 24, 2016 8:59:00 PM obtenerConexion() Conectando a la base de datos...
+INFORMACIÓN: basededatos.SQLite
+dic 24, 2016 8:59:00 PM reciboDelServicioConFecha() consultado: ViewRecibo{id_recibo=40, ndi=16111002, nombre=ALEJ, apellidos=PABLO, zona=CASCO, calle=HID, nodecalle=AS, estado=ADEUDO, mes=2, anio=2017, id_servicio=3, monto=4000}
+INFORMACIÓN: modelo.ViewReciboDAO
+dic 24, 2016 8:59:00 PM utilerias.Log info
+INFORMACIÓN: Cerrando la conexion a la base de datos
+dic 24, 2016 8:59:00 PM cerrarConexion() Conexion cerrada
+INFORMACIÓN: basededatos.SQLite
+dic 24, 2016 8:59:02 PM utilerias.Log info
+INFORMACIÓN: Obteniendo conexion la base de datos...
+dic 24, 2016 8:59:02 PM obtenerConexion() Conectando a la base de datos...
+INFORMACIÓN: basededatos.SQLite
+dic 24, 2016 8:59:02 PM utilerias.Log info
+INFORMACIÓN: Operacion: getRegistros, consultando en la base de datos
+dic 24, 2016 8:59:02 PM utilerias.Log info
+INFORMACIÓN: Cerrando la conexion a la base de datos
+dic 24, 2016 8:59:02 PM cerrarConexion() Conexion cerrada
+INFORMACIÓN: basededatos.SQLite
+dic 24, 2016 8:59:03 PM utilerias.Log info
+INFORMACIÓN: Obteniendo conexion la base de datos...
+dic 24, 2016 8:59:03 PM obtenerConexion() Conectando a la base de datos...
+INFORMACIÓN: basededatos.SQLite
+dic 24, 2016 8:59:03 PM reciboDelServicioConFecha() consultado: ViewRecibo{id_recibo=39, ndi=14160202, nombre=ALEJANDRO, apellidos=PABLO , zona=CASCO, calle=CERRO, nodecalle=2, estado=ADEUDO, mes=2, anio=2017, id_servicio=2, monto=4000}
+INFORMACIÓN: modelo.ViewReciboDAO
+dic 24, 2016 8:59:03 PM utilerias.Log info
+INFORMACIÓN: Cerrando la conexion a la base de datos
+dic 24, 2016 8:59:03 PM cerrarConexion() Conexion cerrada
+INFORMACIÓN: basededatos.SQLite
+dic 24, 2016 8:59:05 PM utilerias.Log info
+INFORMACIÓN: Obteniendo conexion la base de datos...
+dic 24, 2016 8:59:05 PM obtenerConexion() Conectando a la base de datos...
+INFORMACIÓN: basededatos.SQLite
+dic 24, 2016 8:59:05 PM utilerias.Log info
+INFORMACIÓN: Operacion: getRegistros, consultando en la base de datos
+dic 24, 2016 8:59:05 PM utilerias.Log info
+INFORMACIÓN: Cerrando la conexion a la base de datos
+dic 24, 2016 8:59:06 PM cerrarConexion() Conexion cerrada
+INFORMACIÓN: basededatos.SQLite
+dic 24, 2016 8:59:06 PM utilerias.Log info
+INFORMACIÓN: Obteniendo conexion la base de datos...
+dic 24, 2016 8:59:06 PM obtenerConexion() Conectando a la base de datos...
+INFORMACIÓN: basededatos.SQLite
+dic 24, 2016 8:59:06 PM reciboDelServicioConFecha() consultado: ViewRecibo{id_recibo=0, ndi=0, nombre=null, apellidos=null, zona=null, calle=null, nodecalle=null, estado=null, mes=0, anio=0, id_servicio=0, monto=0}
+INFORMACIÓN: modelo.ViewReciboDAO
+dic 24, 2016 8:59:06 PM utilerias.Log info
+INFORMACIÓN: Cerrando la conexion a la base de datos
+dic 24, 2016 8:59:06 PM cerrarConexion() Conexion cerrada
+INFORMACIÓN: basededatos.SQLite
+dic 24, 2016 8:59:08 PM utilerias.Log info
+INFORMACIÓN: Obteniendo conexion la base de datos...
+dic 24, 2016 8:59:08 PM obtenerConexion() Conectando a la base de datos...
+INFORMACIÓN: basededatos.SQLite
+dic 24, 2016 8:59:08 PM utilerias.Log info
+INFORMACIÓN: Operacion: getRegistros, consultando en la base de datos
+dic 24, 2016 8:59:08 PM utilerias.Log info
+INFORMACIÓN: Cerrando la conexion a la base de datos
+dic 24, 2016 8:59:08 PM cerrarConexion() Conexion cerrada
+INFORMACIÓN: basededatos.SQLite
+dic 24, 2016 8:59:09 PM utilerias.Log info
+INFORMACIÓN: Obteniendo conexion la base de datos...
+dic 24, 2016 8:59:09 PM obtenerConexion() Conectando a la base de datos...
+INFORMACIÓN: basededatos.SQLite
+dic 24, 2016 8:59:09 PM reciboDelServicioConFecha() consultado: ViewRecibo{id_recibo=0, ndi=0, nombre=null, apellidos=null, zona=null, calle=null, nodecalle=null, estado=null, mes=0, anio=0, id_servicio=0, monto=0}
+INFORMACIÓN: modelo.ViewReciboDAO
+dic 24, 2016 8:59:09 PM utilerias.Log info
+INFORMACIÓN: Cerrando la conexion a la base de datos
+dic 24, 2016 8:59:09 PM cerrarConexion() Conexion cerrada
+INFORMACIÓN: basededatos.SQLite
+dic 24, 2016 8:59:23 PM utilerias.Log info
+INFORMACIÓN: Obteniendo conexion la base de datos...
+dic 24, 2016 8:59:23 PM obtenerConexion() Conectando a la base de datos...
+INFORMACIÓN: basededatos.SQLite
+dic 24, 2016 8:59:23 PM reciboDelServicioConFecha() consultado: ViewRecibo{id_recibo=0, ndi=0, nombre=null, apellidos=null, zona=null, calle=null, nodecalle=null, estado=null, mes=0, anio=0, id_servicio=0, monto=0}
+INFORMACIÓN: modelo.ViewReciboDAO
+dic 24, 2016 8:59:23 PM utilerias.Log info
+INFORMACIÓN: Cerrando la conexion a la base de datos
+dic 24, 2016 8:59:23 PM cerrarConexion() Conexion cerrada
+INFORMACIÓN: basededatos.SQLite
