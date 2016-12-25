@@ -4,23 +4,25 @@ package modelo;
  *
  * @author Alejandro
  */
-public class ReciboSM {
+public class Recibo {
     private int id_recibo;
     private int id_servicio;
+    private int lectura;
     private int mes;
     private int anio;
     private int monto;
     private String estado;
 
-    public ReciboSM(int id_servicio, int mes, int anio, int monto, String estado) {
+    public Recibo(int id_servicio, int lectura, int mes, int anio, int monto, String estado) {
         this.id_servicio = id_servicio;
+        this.lectura = lectura;
         this.mes = mes;
         this.anio = anio;
         this.monto = monto;
         this.estado = estado;        
     }
 
-    public ReciboSM() {
+    public Recibo() {
     }
 
     public int getId_recibo() {
@@ -31,6 +33,14 @@ public class ReciboSM {
         this.id_recibo = id_recibo;
     }
 
+    public int getLectura() {
+        return lectura;
+    }
+
+    public void setLectura(int lectura) {
+        this.lectura = lectura;
+    }
+        
     public int getId_servicio() {
         return id_servicio;
     }

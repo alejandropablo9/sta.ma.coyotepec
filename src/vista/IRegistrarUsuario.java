@@ -3,6 +3,7 @@ package vista;
 import controlador.ControladorServicio;
 import controlador.ControladorUsuario;
 import java.util.ArrayList;
+import java.util.Calendar;
 import modelo.Servicio;
 import modelo.Usuario;
 import modelo.Zona;
@@ -19,8 +20,18 @@ public class IRegistrarUsuario extends javax.swing.JInternalFrame {
     /**
      * Creates new form IRegistrarUsuario
      */
+    private final int anio;
+    private final int mes;
     public IRegistrarUsuario() {
         initComponents();
+        Calendar c = Calendar.getInstance();
+        anio = c.get(Calendar.YEAR);
+        mes = c.get(Calendar.MONTH);
+        for(int i = 0; i < jcbAnio.getItemCount(); i++){
+            if(jcbAnio.getItemAt(i) == anio)
+                jcbAnio.setSelectedIndex(i);
+        }
+        jcMes.setSelectedIndex(mes);
     }
     
     private void limpiar(){

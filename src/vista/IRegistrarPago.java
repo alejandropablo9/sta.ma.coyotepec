@@ -4,6 +4,7 @@ package vista;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import modelo.ViewRecibo;
+import modelo.ViewReciboDAO;
 
 /**
  *
@@ -12,8 +13,8 @@ import modelo.ViewRecibo;
 public class IRegistrarPago extends javax.swing.JInternalFrame {
     
     
-    private ViewRecibo vr;
-    
+    private final ViewRecibo vr;
+            
     public IRegistrarPago(ViewRecibo vr) {
         this.vr = vr;
         initComponents();
@@ -22,7 +23,7 @@ public class IRegistrarPago extends javax.swing.JInternalFrame {
      
     private void mostrarInformaciondelRecibo(){
         Date fecha = new Date();
-        SimpleDateFormat formateador = new SimpleDateFormat("dd/MM/yyyy"); 
+        SimpleDateFormat formateador = new SimpleDateFormat("dd/MM/yyyy hh:mm"); 
         String f = formateador.format(fecha);
         this.jtNoRecibo.setText(""+vr.getId_recibo());
         this.jtfZona.setText(vr.getZona());
@@ -32,52 +33,44 @@ public class IRegistrarPago extends javax.swing.JInternalFrame {
         this.jtfActual.setText(""+vr.getMontoDouble());
         this.jtfNDI.setText(""+vr.getNdi());
         this.jtfFecha.setText(f);
+        anterior();
+    }
+    
+    private void anterior(){
+        int mes;
+        int anio;
+        if(vr.getMes() - 1 == 0){
+            mes = 12;
+            anio = vr.getAnio() - 1;
+        }else{
+            mes = vr.getMes() - 1;
+            anio = vr.getAnio();            
+        }
+        System.out.println(""+mes+" "+anio+" "+vr.getId_servicio());
+        ViewRecibo anteriorVR = ViewReciboDAO.reciboDelServicioConFecha(
+               mes, anio, vr.getId_servicio());
+        if(anteriorVR != null)
+            this.jtfSaldoAnterior.setText(""+anteriorVR.getMontoDouble());
+        else
+            this.jtfSaldoAnterior.setText("0.00");
     }
     
     private String mes(int m){
-        String mes = "";
         switch(m){
-            case 1: 
-                mes = "ENERO";
-            break;
-            case 2: 
-                mes = "FEBRERO";
-            break;
-            case 3: 
-                mes = "MARZO";
-            break;
-            case 4: 
-                mes = "ABRIL";
-            break;
-            case 5: 
-                mes = "MAYO";
-            break;
-            case 6: 
-                mes = "JUNIO";
-            break;
-            case 7: 
-                mes = "JULIO";
-            break;
-            case 8: 
-                mes = "AGOSTO";
-            break;
-            case 9: 
-                mes = "SEPTIEMBRE";
-            break;
-            case 10: 
-                mes = "OCTUBRE";
-            break;
-            case 11: 
-                mes = "NOVIEMBRE";
-            break;
-            case 12: 
-                mes = "DICIEMBRE";
-            break;
-            default: 
-                mes = "ENERO";
-            break;
+            case 1: return "ENERO";
+            case 2: return "FEBRERO";
+            case 3: return "MARZO";         
+            case 4: return "ABRIL";            
+            case 5: return "MAYO";            
+            case 6: return "JUNIO";
+            case 7: return "JULIO";            
+            case 8: return "AGOSTO";           
+            case 9: return "SEPTIEMBRE";            
+            case 10: return "OCTUBRE";        
+            case 11: return "NOVIEMBRE";            
+            case 12: return "DICIEMBRE";            
+            default: return "ENERO";
         }
-        return mes;
     }
 
     /**
@@ -127,14 +120,14 @@ public class IRegistrarPago extends javax.swing.JInternalFrame {
         jLabel1.setText("Usuario:");
 
         jtfUsuario.setEditable(false);
-        jtfUsuario.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jtfUsuario.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 102, 255));
         jLabel2.setText("No. de Recibo: ");
 
         jtNoRecibo.setEditable(false);
-        jtNoRecibo.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jtNoRecibo.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jtNoRecibo.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -142,14 +135,14 @@ public class IRegistrarPago extends javax.swing.JInternalFrame {
         jLabel3.setText("Mes:");
 
         jtfZona.setEditable(false);
-        jtfZona.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jtfZona.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 102, 255));
         jLabel4.setText("NDI:");
 
         jtfNDI.setEditable(false);
-        jtfNDI.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jtfNDI.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jtfNDI.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -157,14 +150,14 @@ public class IRegistrarPago extends javax.swing.JInternalFrame {
         jLabel5.setText("Zona:");
 
         jtfMes.setEditable(false);
-        jtfMes.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jtfMes.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 102, 255));
         jLabel6.setText("Dirección:");
 
         jtfDireccion.setEditable(false);
-        jtfDireccion.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jtfDireccion.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
 
         jlDatosR1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jlDatosR1.setText("Datos del Recibo");
@@ -174,19 +167,19 @@ public class IRegistrarPago extends javax.swing.JInternalFrame {
         jLabel7.setText("Anterior:");
 
         jtfSaldoAnterior.setEditable(false);
-        jtfSaldoAnterior.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jtfSaldoAnterior.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jtfSaldoAnterior.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(0, 102, 255));
-        jLabel8.setText("Atraso:");
+        jLabel8.setText("Cargo por atraso:");
 
         jtfCargos.setEditable(false);
-        jtfCargos.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jtfCargos.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jtfCargos.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
 
         jtfFecha.setEditable(false);
-        jtfFecha.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jtfFecha.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jtfFecha.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -198,11 +191,11 @@ public class IRegistrarPago extends javax.swing.JInternalFrame {
         jLabel10.setText("Actual:");
 
         jtfActual.setEditable(false);
-        jtfActual.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jtfActual.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jtfActual.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
 
         jtfTotal.setEditable(false);
-        jtfTotal.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jtfTotal.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jtfTotal.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -255,31 +248,29 @@ public class IRegistrarPago extends javax.swing.JInternalFrame {
                         .addComponent(jButton1)
                         .addGap(18, 18, 18)
                         .addComponent(jButton2))
+                    .addComponent(jlDatosR1)
+                    .addComponent(jlDatosR)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel9)
-                                        .addGap(21, 21, 21)
-                                        .addComponent(jtfFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel7)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jtfSaldoAnterior)))
-                                .addGap(22, 22, 22)
+                                .addComponent(jLabel7)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jtfSaldoAnterior, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel8))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel9)
+                                .addGap(21, 21, 21)
+                                .addComponent(jtfFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(7, 7, 7)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel8)
                                     .addComponent(jLabel10)
-                                    .addComponent(jLabel11))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jtfCargos, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jtfActual, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jtfTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(jlDatosR1)
-                            .addComponent(jlDatosR))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                                    .addComponent(jLabel11))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jtfCargos, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jtfActual, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jtfTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -329,7 +320,7 @@ public class IRegistrarPago extends javax.swing.JInternalFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jButton2))
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -350,6 +341,7 @@ public class IRegistrarPago extends javax.swing.JInternalFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         dispose();
+        IRegistrosRecibos.vtnRPago = null;
     }//GEN-LAST:event_jButton2ActionPerformed
 
 

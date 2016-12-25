@@ -21,9 +21,9 @@ public final class SQLite {
     try{
       Class.forName("org.sqlite.JDBC");
       conexionASqlite = DriverManager.getConnection("jdbc:sqlite:"+_FuentedeDatos);
-      Log.info("Conectando a la base de datos...");
+      Log.info(SQLite.class.getName(), "obtenerConexion()", "Conectando a la base de datos...");
     }catch(ClassNotFoundException | SQLException e){
-      Log.info("Error: "+e);
+      Log.info(SQLite.class.getName(), "obtenerConexion()", "Error: "+e);
       Mensaje.deError("Error al conectar con la base de datos");
     }
     return conexionASqlite;
@@ -36,10 +36,10 @@ public final class SQLite {
     }
     try {
       conexion.close();
-      Log.info("Conexion cerrada");
+      Log.info(SQLite.class.getName(), "cerrarConexion()", "Conexion cerrada");
       return true;
     }catch(SQLException e){
-       Log.info("Error: "+e);
+       Log.info(SQLite.class.getName(), "cerrarConexion()", "Error: "+e);
        Mensaje.deError("Error al intentar cerrar la conexión");
     }
     return false;
@@ -51,9 +51,9 @@ public final class SQLite {
         try{
             Statement stmt = cn.createStatement();
             rs = stmt.executeQuery(sql);
-        }catch(Exception e){
+        }catch(SQLException e){
             Mensaje.deError("Ha ocurrido un error"+e);
-            Log.info("Error: "+e);
+            Log.info(SQLite.class.getName(), "getRegistros()", "Error: "+e);
         }
         return rs;
     }

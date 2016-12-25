@@ -32,6 +32,7 @@ public class vPrincipal extends javax.swing.JFrame {
         jMenuItem1 = new javax.swing.JMenuItem();
         jmRecibos = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
+        jMenu1 = new javax.swing.JMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -81,13 +82,17 @@ public class vPrincipal extends javax.swing.JFrame {
         });
         jmRecibos.add(jMenuItem2);
 
-        jMenuItem3.setText("Generar Recibos");
+        jMenu1.setText("Generar Recibos");
+
+        jMenuItem3.setText("Sin Medidor");
         jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem3ActionPerformed(evt);
             }
         });
-        jmRecibos.add(jMenuItem3);
+        jMenu1.add(jMenuItem3);
+
+        jmRecibos.add(jMenu1);
 
         jMenuBar1.add(jmRecibos);
 
@@ -170,6 +175,7 @@ public class vPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane dp;
+    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;

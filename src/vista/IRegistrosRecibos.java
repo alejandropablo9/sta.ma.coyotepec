@@ -2,12 +2,14 @@ package vista;
 
 import controlador.AdminIFrame;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import javax.swing.JDesktopPane;
 import modelo.Zona;
 import modelo.ZonaDAO;
 import modelo.ModelViewRecibo;
 import modelo.ViewRecibo;
-import modelo.ViewReciboDao;
+import modelo.ViewReciboDAO;
 /**
  *
  * @author Alejandro
@@ -17,7 +19,7 @@ public class IRegistrosRecibos extends javax.swing.JInternalFrame {
     /**
      * Creates new form IRegistroClientes
      */
-    private JDesktopPane dp;
+    private final JDesktopPane dp;
     public static ModelViewRecibo mdlRecibos;
     private static int mes;
     private static int anio;
@@ -26,10 +28,18 @@ public class IRegistrosRecibos extends javax.swing.JInternalFrame {
     
     public IRegistrosRecibos(JDesktopPane mainApp) {
         initComponents();
+        Calendar c = Calendar.getInstance();
+        anio = c.get(Calendar.YEAR);
+        mes = c.get(Calendar.MONTH);
+        for(int i = 0; i < jcbAnio.getItemCount(); i++){
+            if(jcbAnio.getItemAt(i) == anio)
+                jcbAnio.setSelectedIndex(i);
+        }
+        jcMes.setSelectedIndex(mes);
         dp = mainApp;
         //mes = this.jcMes.getSelectedIndex() + 1;
         //anio = (int) this.jcbAnio.getSelectedItem();      
-        mdlRecibos = new ModelViewRecibo(ViewReciboDao.todosLosRecibos());
+        mdlRecibos = new ModelViewRecibo(ViewReciboDAO.todosLosRecibos());
         jTablaRecibos.setModel(mdlRecibos);
         selectIndex = jTablaRecibos.getSelectedRow();
     }  
@@ -396,7 +406,7 @@ public class IRegistrosRecibos extends javax.swing.JInternalFrame {
         if(z.getCodigo() == 0){
             vr.setZona("");
         }
-        mdlRecibos = new ModelViewRecibo(ViewReciboDao.recibosComo(vr));
+        mdlRecibos = new ModelViewRecibo(ViewReciboDAO.recibosComo(vr));
         jTablaRecibos.setModel(mdlRecibos);                     
     }//GEN-LAST:event_jbBuscarActionPerformed
 
@@ -415,7 +425,7 @@ public class IRegistrosRecibos extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jtfDireccionFocusLost
 
     private void jbActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbActualizarActionPerformed
-        mdlRecibos = new ModelViewRecibo(ViewReciboDao.todosLosRecibos());
+        mdlRecibos = new ModelViewRecibo(ViewReciboDAO.todosLosRecibos());
         jTablaRecibos.setModel(mdlRecibos);
     }//GEN-LAST:event_jbActualizarActionPerformed
 
@@ -426,29 +436,19 @@ public class IRegistrosRecibos extends javax.swing.JInternalFrame {
         
         if(selectIndex != -1){
             vr = mdlRecibos.getViewRecibo(selectIndex);
-            listaRecibos = ViewReciboDao.recibosdelServicio(vr.getId_servicio());
+            listaRecibos = ViewReciboDAO.recibosdelServicio(vr.getId_servicio());
             jtDeuda.setText(""+vr.getMontoDouble());
             double monto = 0.0;
-            for(ViewRecibo v: listaRecibos){
+            /*for(ViewRecibo v: listaRecibos){
                 if(v.getEstado().equals("ADEUDO"))
                     monto += v.getMontoDouble();
-            }
+            }*/
+            monto = listaRecibos.stream().filter((v) -> 
+                    (v.getEstado().equals("ADEUDO"))).map((v) 
+                            -> v.getMontoDouble()).reduce(monto, (accumulator, _item) 
+                                    -> accumulator + _item);            
             jtTotal.setText(""+monto);
-        }
-        /*
-        if(selectIndex != -1){
-            vr = mdlRecibos.getViewRecibo(selectIndex);
-            listaRecibos = ReciboDAO.recibosSMDelUsuario(vr.getId_servicio(), false);               
-            double monto = 0.0;
-            for(int i = 0; i < listaRecibos.size(); i++){
-                if(vr.getId_servicio() == listaRecibos.get(i).getId_servicio())
-                    this.jtDeuda.setText(""+listaRecibos.get(i).getMontoDouble());
-                monto += listaRecibos.get(i).getMontoDouble();
-            }        
-            this.jtTotal.setText(""+monto);
-        }
-        */
-        //System.out.println(""+monto);        
+        }      
     }//GEN-LAST:event_jTablaRecibosMouseClicked
 
     private void btnCobrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCobrarActionPerformed

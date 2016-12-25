@@ -6,7 +6,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import modelo.ReciboDAO;
-import modelo.ReciboSM;
+import modelo.Recibo;
 import modelo.Servicio;
 import modelo.ServicioDAO;
 import utilerias.Log;
@@ -16,7 +16,7 @@ import utilerias.Log;
  * @author Alejandro
  */
 public final class ControladorRecibo {
-    public static void generarServicios(ReciboSM rsm){
+    public static void generarServicios(Recibo rsm){
         ArrayList<Servicio> servicios = ServicioDAO.serviciosConMedidor(false);
         ArrayList<Servicio> lista = new ArrayList<>();
         SimpleDateFormat formateador = new SimpleDateFormat("dd/MM/yyyy");               
@@ -34,12 +34,12 @@ public final class ControladorRecibo {
         for(Servicio s: servicios){
             try {
                 registro = formateador.parse("01/"+s.getMes()+"/"+s.getAnio());
+                if(registro.before(recibo))
+                    lista.add(s);
             } catch (ParseException ex) {
                 Log.info("Error: al crear fecha del Registro "+s.getId(), 
                         ControladorRecibo.class.getName(), "generarServicios");
-            }
-            if(registro.before(recibo))
-                lista.add(s);
+            }            
         }   
         
         //servicios.forEach(s -> System.out.println(s));

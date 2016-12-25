@@ -4,6 +4,7 @@ import basededatos.SQLite;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import utilerias.Log;
@@ -41,7 +42,7 @@ public final class UsuarioDAO {
             Mensaje.deInformacion("Se ha eliminado\n¡Exitosamente!");
             stmt.close();
             SQLite.cerrarConexion(cn);
-        }catch(Exception e){
+        }catch(SQLException e){
             Mensaje.deError("No se ha sido posible eliminar esta zona...\n"+e);
         }
     }
@@ -60,7 +61,7 @@ public final class UsuarioDAO {
             estatuto.executeUpdate();             
             SQLite.cerrarConexion(cn);
             Log.info("Usuario ndi: "+c.getNdi()+"¡ACTUALIZADO!");
-        }catch(Exception e){
+        }catch(SQLException e){
             Mensaje.deError("Ocurrio un error al actualizar");
             Log.info("Error: "+e);
         }
@@ -83,7 +84,7 @@ public final class UsuarioDAO {
             }
             res.close();
             SQLite.cerrarConexion(cn);
-        }catch(Exception e){
+        }catch(SQLException e){
             Mensaje.deError("Ha ocurrido un error"+e);
         }
         if(existe)
@@ -106,7 +107,7 @@ public final class UsuarioDAO {
             }
             usuarios.close();
             SQLite.cerrarConexion(cn);
-        }catch(Exception e){
+        }catch(SQLException e){
             Mensaje.deError("Ha ocurrido un error"+e);
         }
         return listaUsuarios;

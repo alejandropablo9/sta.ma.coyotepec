@@ -17,6 +17,7 @@ public class ViewRecibo {
     private int anio;
     private int id_servicio;
     private int monto;
+    private int no_medidor;
     
     public ViewRecibo() {
     }
@@ -133,6 +134,14 @@ public class ViewRecibo {
         return ""+calle+" #"+nodecalle;
     }
 
+    public int getNo_medidor() {
+        return no_medidor;
+    }
+
+    public void setNo_medidor(int no_medidor) {
+        this.no_medidor = no_medidor;
+    }
+        
     @Override
     public String toString() {
         return "ViewRecibo{" + "id_recibo=" + id_recibo + ", ndi=" + ndi + ", nombre=" + nombre + ", apellidos=" + apellidos + 

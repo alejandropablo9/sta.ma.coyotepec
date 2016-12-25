@@ -26,9 +26,10 @@ CREATE TABLE IF NOT EXISTS `Servicio` (
 	FOREIGN KEY(id_zona) REFERENCES Zona(codigo)
  );
 
-CREATE TABLE IF NOT EXISTS `Recibo_sin_medidor` (
+CREATE TABLE IF NOT EXISTS `Recibo` (
 	`id_recibo` INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
 	`id_servicio` INTEGER NOT NULL,
+	`lectura` INTEGER,
 	`mes` INTEGER,
 	`anio` INTEGER,  
 	`monto` INTEGER,  
@@ -51,7 +52,8 @@ inner join Zona as z on z.codigo = s.id_zona
 
 CREATE VIEW recibos as 
 select r.id_recibo, u.NDI, u.nombre, u.apellidos, z.nombre as zona, 
-s.calle, s.no_calle, r.estado, r.mes, r.anio, s.id_servicio, r.monto
+s.calle, s.no_calle, r.estado, r.mes, r.anio, s.id_servicio, r.monto,
+s.no_medidor
 from Usuario as u inner join Servicio as s on u.ndi = s.ndi_usuario
 inner join Recibo_sin_medidor as r on s.id_servicio = r.id_servicio
 inner join Zona as z on z.codigo = s.id_zona

@@ -3,7 +3,7 @@ package vista;
 import controlador.ControladorRecibo;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import modelo.ReciboSM;
+import modelo.Recibo;
 import utilerias.Conversion;
 
 /**
@@ -16,7 +16,7 @@ public class IGenerarRecibos extends javax.swing.JInternalFrame {
      * Creates new form IGenerarRecibos
      */
     private Matcher matchCuota;
-    private Pattern erCuota;
+    private final Pattern erCuota;
     public IGenerarRecibos() {
         initComponents();
         erCuota = Pattern.compile("\\d+.\\d{2}");
@@ -178,11 +178,12 @@ public class IGenerarRecibos extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbGenerarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbGenerarActionPerformed
-        ReciboSM rsm = new ReciboSM();
+        Recibo rsm = new Recibo();
         matchCuota = erCuota.matcher(jtMonto.getText());
         if(matchCuota.matches()){        
             rsm.normalizarMonto(Conversion.deStringAdouble(jtMonto.getText()));
             rsm.setMes(jcMes.getSelectedIndex() + 1);
+            rsm.setLectura(0);
             rsm.setEstado("ADEUDO");
             rsm.setAnio((int) jcbAnio.getSelectedItem());        
         }else{

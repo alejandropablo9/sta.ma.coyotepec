@@ -8,7 +8,7 @@ import javax.swing.table.AbstractTableModel;
  * @author alejandro
  */
 public class ModelViewRecibo extends  AbstractTableModel{
-    private String[] nombreColumnas = {"No. Recibo", "NDI", "Nombre", "Apellidos", "Zona", "Calle", "Número", "Estado"};
+    private String[] nombreColumnas = {"No. Recibo", "NDI", "Medidor", "Nombre", "Apellidos", "Zona", "Calle", "Número", "Estado"};
     private ArrayList<ViewRecibo> recibos;
 
     public ModelViewRecibo(ArrayList<ViewRecibo> recibos) {
@@ -16,7 +16,7 @@ public class ModelViewRecibo extends  AbstractTableModel{
     }
 
     public ModelViewRecibo(int mes, int anio) {
-        this.recibos = ViewReciboDao.recibosDeLaFecha(mes, anio);
+        this.recibos = ViewReciboDAO.recibosDeLaFecha(mes, anio);
     }        
     
     @Override
@@ -35,16 +35,18 @@ public class ModelViewRecibo extends  AbstractTableModel{
         switch(columnIndex){
             case 0: return vr.getId_recibo();
             case 1: return vr.getNdi();
-            case 2: return vr.getNombre();
-            case 3: return vr.getApellidos();
-            case 4: return vr.getZona();
-            case 5: return vr.getCalle();
-            case 6: return vr.getNodecalle();
-            case 7: return vr.getEstado();
+            case 2: return vr.getNo_medidor();
+            case 3: return vr.getNombre();
+            case 4: return vr.getApellidos();
+            case 5: return vr.getZona();
+            case 6: return vr.getCalle();
+            case 7: return vr.getNodecalle();
+            case 8: return vr.getEstado();
             default: return null;
         }        
     }
     
+    @Override
     public String getColumnName(int column) {
         return nombreColumnas[column];
     }
@@ -54,9 +56,7 @@ public class ModelViewRecibo extends  AbstractTableModel{
     }
         
     public boolean estVacio(){
-        if(recibos == null)
-            return true;
-        return false;
+        return recibos == null;
     }
     
 }
